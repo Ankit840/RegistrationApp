@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+
+<head>
+	<title>User Dashboard</title>
+</head>
+
+<body>
+	<section class="banner d-flex justify-content-center align-items-center">
+		<div class="alert alert-primary" role="alert">
+			<h1 class="font-weight-bold">Welcome, <span th:text="${user.name}"></span></h1>
+		</div>
+	</section>
+</body>
+
+</html>

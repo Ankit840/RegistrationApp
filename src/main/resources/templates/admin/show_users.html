@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="admin/base::layout(~{::section})">
+
+<head>
+	<title>Show Users</title>
+</head>
+
+<body>
+	<section>
+		<div class="card mr-3">
+			<div class="card-body">
+				<h1 class="text-center">Users List</h1>
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">No</th>
+							<th scope="col">Full Name</th>
+							<th scope="col">Email</th>
+							<th scope="col">Status</th>
+							<th scope="col">Created Date</th>
+							<th scope="col">Updated Date</th>
+							<th scope="col">Deactivated Date</th>
+							<th scope="col">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="c : ${listUser}">
+							<th scope="row" th:text="${c.id}"></th>
+							<td th:text="${c.name}"></td>
+							<td th:text="${c.email}"></td>
+							<td th:text="${c.status}"></td>
+							<td th:text="${c.createdDate}"></td>
+							<td th:text="${c.updatedDate}"></td>
+							<td th:text="${c.deactivatedDate}"></td>
+							<td>
+								<button class="btn btn-danger btn-sm">DELETE</button>
+								<button class="btn btn-primary btn-sm">EDIT</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>
